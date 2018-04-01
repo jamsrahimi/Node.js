@@ -64,7 +64,7 @@ switch (cmd) {
         readFile(STORE_FILE_NAME)
             .then(content => {
                 let subString = content.toString().split('\n');
-                let editStrings = subString.splice(args - 1, 1);
+                subString.splice(args - 1, 1);
                 overWriteFile(subString.join('\n'))
                     .then(data => console.log(`To-Dos: \n${ subString.join('\n') }`))
                     .catch(console.error);
